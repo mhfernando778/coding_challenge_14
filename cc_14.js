@@ -42,12 +42,12 @@ addSupportTicket("Tickle Monster", "Checkout page not functioning", "Medium");
 
 // Task 3: Converting NodeLists to Arrays for Bulk Updates
 
-function highlightHighPriorityTickets() {
+function highlightHighPriorityTickets() { // new function 
     const highPriorityTickets = document.querySelectorAll(".high-priority");
     const ticketArray = Array.from(highPriorityTickets);
 
-    ticketArray.forEach(ticket => {
+    ticketArray.forEach(ticket => { // selecting each card
         ticket.style.backgroundColor = "pink";
     });
 }
-highlightHighPriorityTickets();
+highlightHighPriorityTickets(); // highlighting the cards
