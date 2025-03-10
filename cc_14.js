@@ -51,3 +51,14 @@ function highlightHighPriorityTickets() { // new function
     });
 }
 highlightHighPriorityTickets(); // highlighting the cards
+
+
+
+// Task 4: Implementing Ticket Resolution with Event Bubbling
+
+document.getElementById("ticketContainer").addEventListener("click", (event) => {
+    event.stopPropagation();
+    if (event.target.classList.contains("support-ticket")) {
+        console.log("Support ticket clicked!");
+    }
+});
