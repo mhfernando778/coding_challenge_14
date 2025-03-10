@@ -39,3 +39,15 @@ addSupportTicket("OMG Sharquisha", "Cannot access account", "High");
 addSupportTicket("Ariana Grenade", "Not Processing", "High");
 addSupportTicket("Tickle Monster", "Checkout page not functioning", "Medium");
 
+
+// Task 3: Converting NodeLists to Arrays for Bulk Updates
+
+function highlightHighPriorityTickets() {
+    const highPriorityTickets = document.querySelectorAll(".high-priority");
+    const ticketArray = Array.from(highPriorityTickets);
+
+    ticketArray.forEach(ticket => {
+        ticket.style.backgroundColor = "pink";
+    });
+}
+highlightHighPriorityTickets();
