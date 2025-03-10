@@ -1,24 +1,24 @@
 // Task 2: Adding Support Tickets Dynamically
 
-function addSupportTicket(customerName, issueDescription, priorityLevel) {
+function addSupportTicket(customerName, issueDescription, priorityLevel) { // Creating new function to make support tickets
     const ticketContainer = document.getElementById("ticketContainer");
     const ticket = document.createElement("div");
     
-    ticket.setAttribute("class", "support-ticket");
+    ticket.setAttribute("class", "support-ticket"); // setting an attribute
     if (priorityLevel.toLowerCase() === "high") {
         ticket.classList.add("high-priority");
     }
 
-    const nameHeading = document.createElement("h2");
+    const nameHeading = document.createElement("h2"); // the header with customer name
     nameHeading.textContent = customerName;
 
-    const issueParagraph = document.createElement("p");
+    const issueParagraph = document.createElement("p"); // a paragraph with issue description
     issueParagraph.textContent = issueDescription;
 
     const priorityLabel = document.createElement("span");
     priorityLabel.textContent = `Priority: ${priorityLevel}`;
 
-    const resolveButton = document.createElement("button");
+    const resolveButton = document.createElement("button"); // making a button
     resolveButton.textContent = "Resolve";
     resolveButton.setAttribute("class", "resolve-button");
     resolveButton.addEventListener("click", (event) => {
@@ -26,25 +26,16 @@ function addSupportTicket(customerName, issueDescription, priorityLevel) {
         ticketContainer.removeChild(ticket);
     });
 
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.setAttribute("class", "edit-button");
-    editButton.addEventListener("click", () => {
-        enableTicketEditing(ticket, nameHeading, issueParagraph, priorityLabel);
-    });
-
-    ticket.appendChild(nameHeading);
+    ticket.appendChild(nameHeading); // appending
     ticket.appendChild(issueParagraph);
     ticket.appendChild(priorityLabel);
-    ticket.appendChild(editButton);
     ticket.appendChild(resolveButton);
     
     ticketContainer.appendChild(ticket);
 }
 
 // Test Cases
-addSupportTicket("Alice Smith", "Cannot access account", "High");
-addSupportTicket("Bob Johnson", "Payment not processed", "Medium");
-addSupportTicket("Charlie Brown", "Bug in checkout page", "High");
+addSupportTicket("OMG Sharquisha", "Cannot access account", "High");
+addSupportTicket("Ariana Grenade", "Not Processing", "High");
+addSupportTicket("Tickle Monster", "Checkout page not functioning", "Medium");
 
-highlightHighPriorityTickets();
